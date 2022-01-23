@@ -1,0 +1,37 @@
+<div style="text-align: center;">
+    <h2>Articulos:</h2>
+</div>
+<ul>
+    <li *ngFor="let articulo of articulos">
+        {{articulo.name}}, {{articulo.description}}, {{articulo.pu}}
+        <span class="text-danger fw-bold blink ms-2" *ngIf="articulo.pu <= 25">
+            Oferta!
+        </span>
+    </li>
+</ul>
+<div class="col-sm-6">
+    
+    <label class="mx-1" for=" ">Nuevo Articulo:</label>
+    <input type="text" class="form-control form-control-sm" id="articulo"
+     [(ngModel)]="newArticulo" (keyup.enter)="onEnter()" />
+</div>
+
+
+
+<div style="text-align: center;">
+    <h2>Departamentos:</h2>
+</div>
+<ul>
+    <li *ngFor="let department of departments; let i = index">
+        <button class="btn btn-outline-primary btn-sm mx-1" (click)="deleteDepartment(i)">Delete</button>
+        {{department}}
+    </li>
+    <label for="">Nuevo Departamento</label>
+    <input type="text" class="form-control form-control-sm" id="departamento"
+     [(ngModel)]="newDepartment" (keyup.enter)="onUpload()" />
+</ul>
+<div class="mb-3 text-center">
+    <button class="btn btn-outline-dark btn-sm" (click)="onGoHome()">Go home!</button>
+  </div>
+
+

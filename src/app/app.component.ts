@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tii-p3';
+  showRoutes = false;
+
+  onToggle() {
+    this.showRoutes = !this.showRoutes;
+  }
 }
+
+
