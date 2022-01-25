@@ -1,0 +1,32 @@
+<div style="text-align: center;">
+    <h2>People:</h2>
+</div>
+<table class="table table-bordered table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Avatar</th>
+            <th scope="col">Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Id</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of personList">
+            <td>
+                <img src='{{person.avatar}}' alt='{{person.avatar}}'>
+            </td>
+            <td>
+                {{person.name}}
+            </td>
+            <td>
+                {{person.last_name}}
+            </td>
+            <td>
+                {{person.id}}
+            </td>
+            <td>
+                {{person.email}}
+            </td>
+        </tr>
+</table>

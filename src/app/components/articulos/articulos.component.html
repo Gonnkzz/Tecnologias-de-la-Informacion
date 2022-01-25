@@ -1,14 +1,28 @@
 <div style="text-align: center;">
     <h2>Articulos:</h2>
 </div>
-<ul>
-    <li *ngFor="let articulo of articulos">
-        {{articulo.name}}, {{articulo.description}}, {{articulo.pu}}
-        <span class="text-danger fw-bold blink ms-2" *ngIf="articulo.pu <= 25">
-            Oferta!
-        </span>
-    </li>
-</ul>
+<table class="table table-bordered table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price U</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let articulo of articulos">
+            <td>
+                {{articulo.name}}
+            </td>
+            <td>
+                {{articulo.description}}
+            </td>
+            <td>
+                {{articulo.pu}}
+            </td>
+        </tr>
+</table>
+
 <div class="col-sm-6">
     
     <label class="mx-1" for=" ">Nuevo Articulo:</label>
@@ -21,17 +35,24 @@
 <div style="text-align: center;">
     <h2>Departamentos:</h2>
 </div>
-<ul>
-    <li *ngFor="let department of departments; let i = index">
-        <button class="btn btn-outline-primary btn-sm mx-1" (click)="deleteDepartment(i)">Delete</button>
-        {{department}}
-    </li>
-    <label for="">Nuevo Departamento</label>
-    <input type="text" class="form-control form-control-sm" id="departamento"
+<table class="table table-bordered table-dark">
+    <thead>
+        <tr>
+            <th>Acction</th>
+            <th>Department Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let department of departments; let i = index">
+            <td><button class="btn btn-outline-primary btn-sm mx-1" (click)="deleteDepartment(i)">Delete</button></td>
+            <td>{{department}}</td>
+        </tr>
+    </tbody>
+</table>
+<input type="text" class="form-control form-control-sm" id="departamento"
      [(ngModel)]="newDepartment" (keyup.enter)="onUpload()" />
-</ul>
 <div class="mb-3 text-center">
-    <button class="btn btn-outline-dark btn-sm" (click)="onGoHome()">Go home!</button>
+    <button class="btn btn-outline-dark btn-sm btn-info mt-3" (click)="onGoHome()">Go home!</button>
   </div>
 
 
